@@ -17,6 +17,7 @@
                 </and>
                 <feature name="DeleteScaleModell"/>
                 <feature name="InsertScaleModell"/>
+                <feature name="GetScaleModell"/>
             </and>
             <alt abstract="true" mandatory="true" name="UI">
                 <feature name="GUI"/>
@@ -35,7 +36,7 @@
             <alt abstract="true" mandatory="true" name="DataFormat">
                 <feature name="CSV"/>
                 <feature name="XML"/>
-                <feature name="DB"/>
+                <feature name="PostgreSQL"/>
             </alt>
         </and>
     </struct>
@@ -71,6 +72,18 @@ Import =&gt; insert
             <imp>
                 <var>byScaleModellManufacturer</var>
                 <var>ScaleModellManufacturer</var>
+            </imp>
+        </rule>
+        <rule>
+            <disj>
+                <var>GetScaleModell</var>
+                <var>SearchScaleModell</var>
+            </disj>
+        </rule>
+        <rule>
+            <imp>
+                <var>sort</var>
+                <var>SearchScaleModell</var>
             </imp>
         </rule>
     </constraints>
